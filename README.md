@@ -1,2 +1,4 @@
-Online resume project for Udacity frontend web developer nanodegree.
-Checkout site here: https://spiningup.github.io/udacity-frontend-resume/
+# Front-End Web Developer Nanodegree
+Project : online resume
+
+Checkout at https://spiningup.github.io/udacity-frontend-resume/
