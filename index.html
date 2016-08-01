@@ -157,6 +157,8 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     $(".section:first").show();
     $("#navbar li").click(function(event) {
       var current = $(this).index();
+      $("#navbar li").css("background-color", "#4a4a4a");
+      $(this).css("background-color", "#f3f3f3");
       $(".section").hide();
       $(".section:eq(" + current + ")").show();
       if (current === 4) {

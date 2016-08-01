@@ -3,7 +3,7 @@ var bio = {
   "name": "Jun Yan",
   "role": "Data Scientist",
   "contacts": {
-    "mobile": "650-704-1227",
+    "mobile": "650-XXX-XXXX",
     "email": "mouseyan@gmail.com",
     "github": "spiningup",
     "twitter": "@JunYan22",
@@ -103,7 +103,7 @@ var data = "%data%";
 bio.display = function() {
   $("#header").prepend(HTMLheaderRole.replace(data, bio.role));
   $("#header").prepend(HTMLheaderName.replace(data, bio.name));
-  $("#footerContacts").append(HTMLmobile.replace(data, bio.contacts.mobile));
+  // $("#footerContacts").append(HTMLmobile.replace(data, bio.contacts.mobile));
   $("#footerContacts").append(HTMLemail.replace(data, bio.contacts.email));
   $("#footerContacts").append(HTMLgithub.replace(data, bio.contacts.github));
   $("#footerContacts").append(HTMLtwitter.replace(data, bio.contacts.twitter));
