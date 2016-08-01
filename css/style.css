@@ -222,7 +222,7 @@ span {
 
 #map {
   display: block;
-  height: 100%;
+  height: 90%;
   margin: 0 5%;
 }
 
@@ -236,5 +236,9 @@ span {
   #skills-h3,
   .biopic {
     display: block;
+  }
+
+  #map {
+    height: 100%;
   }
 }
