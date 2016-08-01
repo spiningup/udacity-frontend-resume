@@ -30,7 +30,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   <!--
   Uncomment the <script> tag below when you're ready to add an interactive Google Map to your resume!
   -->
-  <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBrLGKE4zHBTS_ABz9fkuBVVIdFHBuwqY&libraries=places"></script>
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
@@ -43,19 +43,31 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     display by looking at the id or at what's written between the <h2> tags.
     -->
     <div id="header" class="center-content clear-fix">
-      <ul id="topContacts" class="flex-box"></ul>
+      <!-- <ul id="topContacts" class="flex-box"></ul> -->
+      <nav id="navbar">
+        <ul class="flex-box">
+            <li class="nav-item"><span class="orange-text">Bio</span></li>
+            <li class="nav-item"><span class="orange-text">Work</span></li>
+            <li class="nav-item"><span class="orange-text">Projects</span></li>
+            <li class="nav-item"><span class="orange-text">Education</span></li>
+            <li class="nav-item"><span class="orange-text">Location</span></li>
+        </ul>
+      </nav>
+    </div>
+    <div id="bio" class="section gray">
+      <h2>Bio</h2>
     </div>
     <div style="clear: both;"></div>
-    <div id="workExperience" class="gray">
+    <div id="workExperience" class="section gray">
       <h2>Work Experience</h2>
     </div>
-    <div id="projects">
+    <div id="projects" class="section gray">
       <h2>Projects</h2>
     </div>
-    <div id="education" class="gray">
+    <div id="education" class="section gray">
       <h2>Education</h2>
     </div>
-    <div id="mapDiv">
+    <div id="mapDiv" class="section gray">
       <h2>Where I've Lived and Worked</h2>
     </div>
     <div id="lets-connect" class="dark-gray">
@@ -119,7 +131,6 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
         an opening and closing set of slash asterisks for block comments.
     */
 
-
     if(document.getElementsByClassName('flex-item').length === 0) {
       document.getElementById('topContacts').style.display = 'none';
     }
@@ -141,6 +152,20 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     if(document.getElementById('map') === null) {
       document.getElementById('mapDiv').style.display = 'none';
     }
+
+    $(".section").hide();
+    $(".section:first").show();
+    $("#navbar li").click(function(event) {
+      var current = $(this).index();
+      $(".section").hide();
+      $(".section:eq(" + current + ")").show();
+      if (current === 4) {
+        initializeMap();
+      }
+    });
+
+    $('a[href="#"]').removeAttr("href").css('color', 'orange');
+
   </script>
 </body>
 </html>

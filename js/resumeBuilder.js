@@ -103,16 +103,16 @@ var data = "%data%";
 bio.display = function() {
   $("#header").prepend(HTMLheaderRole.replace(data, bio.role));
   $("#header").prepend(HTMLheaderName.replace(data, bio.name));
-  $("#topContacts").append(HTMLmobile.replace(data, bio.contacts.mobile));
-  $("#topContacts").append(HTMLemail.replace(data, bio.contacts.email));
-  $("#topContacts").append(HTMLgithub.replace(data, bio.contacts.github));
-  $("#topContacts").append(HTMLtwitter.replace(data, bio.contacts.twitter));
-  $("#topContacts").append(HTMLlocation.replace(data, bio.contacts.location));
-  $("#header").append(HTMLbioPic.replace(data, bio.biopic));
-  $("#header").append(HTMLwelcomeMsg.replace(data, bio.welcomeMessage));
+  $("#footerContacts").append(HTMLmobile.replace(data, bio.contacts.mobile));
+  $("#footerContacts").append(HTMLemail.replace(data, bio.contacts.email));
+  $("#footerContacts").append(HTMLgithub.replace(data, bio.contacts.github));
+  $("#footerContacts").append(HTMLtwitter.replace(data, bio.contacts.twitter));
+  $("#footerContacts").append(HTMLlocation.replace(data, bio.contacts.location));
+  $("#bio").append(HTMLbioPic.replace(data, bio.biopic));
+  $("#bio").append(HTMLwelcomeMsg.replace(data, bio.welcomeMessage));
 
   if (bio.skills.length > 0) {
-    $("#header").append(HTMLskillsStart);
+    $("#bio").append(HTMLskillsStart);
     bio.skills.forEach(function(skill){
       $("#skills").append(HTMLskills.replace(data, skill));
     });
@@ -187,8 +187,6 @@ work.display();
 projects.display();
 education.display();
 
-$("#main").append(internationalizeButton);
+// $("#main").append(internationalizeButton);
 
 $("#mapDiv").append(googleMap);
-
-$('a[href="#"]').removeAttr("href").css('color', 'orange');
